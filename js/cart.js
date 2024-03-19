@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Hàm tăng số lượng
 function increaseQuantity(index) {
     let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
-    formDataArray[0].cart[index].quantily++; // Sửa thành quantily thay vì quantity
+    formDataArray[0].cart[index].quantily++; 
     localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
     location.reload(); // Tải lại trang để cập nhật giỏ hàng
 }
@@ -40,8 +40,8 @@ function increaseQuantity(index) {
 // Hàm giảm số lượng
 function decreaseQuantity(index) {
     let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
-    if(formDataArray[0].cart[index].quantily > 1) { // Sửa thành quantily thay vì quantity
-        formDataArray[0].cart[index].quantily--; // Sửa thành quantily thay vì quantity
+    if(formDataArray[0].cart[index].quantily > 1) { 
+        formDataArray[0].cart[index].quantily--; 
         localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
         location.reload(); // Tải lại trang để cập nhật giỏ hàng
     }
