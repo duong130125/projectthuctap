@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        body{
+            background-color: #b01248;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form{
+            width: 400px;
+            height: 440px;
+            background-color: #d2baa0;
+        }
+        .form-input{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .material-symbols-outlined{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(157, 26, 174);
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 50%;
+            color: rgba(240, 248, 255, 0.644);
+        }
+        input{
+            border: 0;
+            height: 25px;
+            border-radius: 3px;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" id="signupForm">
+        <div class="form-input">
+            <span style="margin-top: 20px;" class="material-symbols-outlined">lock</span>
+        </div>
+        <div class="form-input">
+            <h1>Sign up</h1>
+        </div>
+        <div class="form-input">
+            <label for=""></label>
+            <input id="firstName" type="text" placeholder="First Name*">
+            <label for=""></label>
+            <input id="lastName" type="text" placeholder="Last Name*">
+        </div>
+        <div class="form-input">
+            <label for=""></label>
+            <input id="email" style="width: 352px;" type="text" placeholder="Email Address*">
+        </div>
+        <div class="form-input">
+            <label for=""></label>
+            <input id="password" style="width: 352px;" type="password" placeholder="Password*">
+        </div>
+        <div class="form-input">
+            <input style="margin-right: 0px;" type="checkbox">
+            <div style="margin-right: 93px; font-size: 15px; color: #000000d4;">
+                <span>I want to receive inspiration, marketing</span><br>
+                <span>promotions and updates via email.</span>
+            </div>
+        </div>
+        <div class="form-input">
+            <button id="signUpButton" style="width: 350px; height: 25px; margin-left: 5px;  background-color: rgb(113, 98, 232); border: 0; border-radius: 2px;"><p style="font-size: 8px; color: aliceblue; font-weight: bold;">SIGN UP</p></button>
+        </div>
+        <div class="form-input">
+            <a id="loginLink" style="font-size: 12px; margin-left: 190px;" href="./login.html">Already have an account? Sign in</a>
+        </div>
+        <div class="form-input">
+            <span id="successMessage" class="success-message"></span>
+            <span id="errorMessage" class="error-message"></span>
+        </div>
+        <div class="form-input">
+            <span id="infoMessage" class="error-message"></span>
+        </div>
+        <div class="form-input">
+            <span style="color: #535252; font-size: 13px;">Copyright &copy; <a style="color: #535252;" href="">Your website</a> 2024.</span>
+        </div>
+    </form>
+
+    <script src="../js/signup.js"></script>
+</body>
+</html>

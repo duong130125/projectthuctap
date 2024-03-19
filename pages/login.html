@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        
+        body{
+            background-color: #b01248;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form{
+            width: 400px;
+            height: auto;
+            background-color: #d3ba9b;
+        }
+        .form-input{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .material-symbols-outlined{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(157, 26, 174);
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 50%;
+            color: rgba(240, 248, 255, 0.644);
+        }
+        input{
+            border: 0;
+            height: 35px;
+            border-radius: 3px;
+        }
+        .item{
+            margin-left: 10px;
+            display: flex;
+            gap: 120px;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" id="loginForm">
+        <div class="form-input">
+            <span style="margin-top: 20px;" class="material-symbols-outlined">lock</span>
+        </div>
+        <div class="form-input">
+            <h1>Sign in</h1>
+        </div>
+        <div class="form-input">
+            <label for="email"></label>
+            <input id="email" style="width: 352px;" type="text" placeholder="Email Address*">
+        </div>
+        <div class="form-input">
+            <label for="password"></label>
+            <input id="password" style="width: 352px;" type="password" placeholder="Password*">
+        </div>
+        <div class="form-input">
+            <input style="margin-right: 0px;" type="checkbox">
+            <span style="margin-right: 230px; color: #000000d6;">Remember me</span>
+        </div>
+        <div class="form-input">
+            <button id="signInButton" style="width: 350px; height: 25px; background-color: rgb(72, 50, 237); border: 0; border-radius: 2px; margin-left: 8px;"><p style="font-size: 8px; color: aliceblue; font-weight: bold;">SIGN IN</p></button>
+        </div>
+        <div class="form-input">
+            <div class="item">
+                <a style="font-size: 12px; color: rgba(0, 0, 255, 0.724);" href="">Forgot password</a>
+                <a style="font-size: 12px; color: rgba(0, 0, 255, 0.726);" href="./signup.html">Don't have an account? Sign up</a>
+            </div>
+        </div>
+        <div class="form-input">
+            <span id="successMessage" class="success-message"></span>
+            <span id="errorMessage" class="error-message"></span>
+        </div>
+        <div class="form-input">
+            <span style="color: #535252; font-size: 13px; margin-top: 30px;">Copyright &copy; <a style="color: #535252;" href="">Your website</a> 2024.</span>
+        </div>
+    </form>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
