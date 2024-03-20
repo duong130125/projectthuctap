@@ -47,8 +47,57 @@
 //         price:"250.000",
 //         id:8,
 //     },
+//     {
+//         image:"../asset/imgs/tải xuống.jpg",
+//         name:"Elody",
+//         price:"3.000.000",
+//         id:9,
+//     },  
+//     {
+//         image:"../asset/imgs/photo1658455342930-16584553430462042350104-63794084405807.jpg",
+//         name:"Elody",
+//         price:"1.400.000",
+//         id:10,
+//     },   
+//     {
+//         image:"../asset/imgs/in-vo-my-pham-an-tuong-tu-cai-nhin-dau-tien-1.jpg",
+//         name:"Elody",
+//         price:"750.000",
+//         id:11,
+//     },   
+//     {
+//         image:"../asset/imgs/images.jpg",
+//         name:"Elody",
+//         price:"5.000.000",
+//         id:12,
+//     },
+//     {
+//         image:"../asset/imgs/gia-cong-my-pham-trang-da-1610168090.jpg",
+//         name:"Elody",
+//         price:"10.000.000",
+//         id:13,
+//     },
+//     {
+//         image:"../asset/imgs/cach-phan-biet-my-pham-that-gia-1.jpg",
+//         name:"Elody",
+//         price:"1.550.000",
+//         id:14,
+//     },
+//     {
+//         image:"../asset/imgs/anhmypham.jpg",
+//         name:"Elody",
+//         price:"2.050.000",
+//         id:15,
+//     },
+//     {
+//         image:"../asset/imgs/bộ-mỹ-phẩm-1.jpg",
+//         name:"Elody",
+//         price:"2.000.000",
+//         id:16,
+//     },
 // ]
 // localStorage.setItem("products", JSON.stringify(products));
+
 
 let products = JSON.parse(localStorage.getItem("products"));
 function renderProducts(){
