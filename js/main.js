@@ -2,7 +2,7 @@
 //     {
 //         image:"../asset/imgs/image-asset.jpeg",
 //         name:"Kem nền",
-//         price:"100",
+//         price:"100.000",
 //         id:1,
 //     },
 //     {
@@ -48,7 +48,7 @@
 //         id:8,
 //     },
 //     {
-//         image:"../asset/imgs/tải xuống.jpg",
+//         image:"../asset/imgs/655-10.jpg",
 //         name:"Elody",
 //         price:"3.000.000",
 //         id:9,
@@ -66,7 +66,7 @@
 //         id:11,
 //     },   
 //     {
-//         image:"../asset/imgs/images.jpg",
+//         image:"../asset/imgs/nguon-hang-si-my-pham-nhat-tu-cac-shop-ban-si.jpg",
 //         name:"Elody",
 //         price:"5.000.000",
 //         id:12,
