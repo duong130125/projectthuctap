@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td>
                     <button onclick="increaseQuantity(${i})">Tăng</button>
                     <button onclick="decreaseQuantity(${i})">Giảm</button>
+                    <button onclick="removeItem(${i})">Xóa</button>
                 </td>
             `;
             tbody.appendChild(row);
@@ -45,4 +46,12 @@ function decreaseQuantity(index) {
         localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
         location.reload(); // Tải lại trang để cập nhật giỏ hàng
     }
+}
+
+// Hàm xóa sản phẩm khỏi giỏ hàng
+function removeItem(index) {
+    let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
+    formDataArray[0].cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
+    localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
+    location.reload(); // Tải lại trang để cập nhật giỏ hàng
 }
