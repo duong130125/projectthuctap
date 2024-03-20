@@ -9,3 +9,15 @@ td img {
     margin: auto; 
 }
 
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    color: rgb(234, 7, 7);
+    font-family: sans-serif;
+}
+.form-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
