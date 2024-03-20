@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             row.innerHTML = `
                 <td>${i + 1}</td>
                 <td>${item.name}</td>
-                <td><img src="${item.image}" alt="${item.name}" style="width: 50px;"></td>
+                <td><img src="${item.image}" alt="${item.name}" style="width: 100px; height:60px;  object-fit: cover;"></td>
                 <td>${item.price}</td>
                 <td>${item.quantily}</td>
                 <td>

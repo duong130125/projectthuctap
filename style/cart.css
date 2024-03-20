@@ -1,0 +1,11 @@
+table{
+    width: 500px;
+    background-color: bisque;
+    color: rgb(234, 13, 13);
+}
+
+td img {
+    display: block; 
+    margin: auto; 
+}
+
