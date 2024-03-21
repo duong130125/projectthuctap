@@ -20,6 +20,13 @@ header {
     align-items: center;
 
 }
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0011b;
+    background-color: #ee4d2da9;
+}
 
 img{
     width: 250px;

@@ -1,5 +1,5 @@
 table{
-    width: 500px;
+    width: 600px;
     background-color: bisque;
     color: rgb(234, 13, 13);
 }
@@ -20,4 +20,5 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }

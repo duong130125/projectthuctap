@@ -8,15 +8,19 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Dữ liệu cart:", formDataArray[0].cart);
         // Lặp qua từng mục trong cart và thêm vào tbody
         let tbody = document.getElementById("tbody");
+        let totalCartPrice = 0; // Khởi tạo biến tổng thành tiền
         for(let i = 0; i < formDataArray[0].cart.length; i++) {
             let item = formDataArray[0].cart[i];
+            let totalPrice = item.price * item.quantily; // Tính tổng số tiền cho mỗi mục
+            totalCartPrice += totalPrice; // Cộng vào tổng thành tiền
             let row = document.createElement("tr");
             row.innerHTML = `
                 <td>${i + 1}</td>
                 <td>${item.name}</td>
-                <td><img src="${item.image}" alt="${item.name}" style="width: 100px; height:60px;  object-fit: cover;"></td>
+                <td><img src="${item.image}" alt="${item.name}" style="width: 100px; height:60px; object-fit: cover;"></td>
                 <td>${item.price}</td>
                 <td>${item.quantily}</td>
+                <td>${totalPrice}</td>
                 <td>
                     <button onclick="increaseQuantity(${i})">Tăng</button>
                     <button onclick="decreaseQuantity(${i})">Giảm</button>
@@ -25,6 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
             `;
             tbody.appendChild(row);
         }
+        // Tạo hàng ngang mới để hiển thị tổng đơn hàng
+        let totalRow = document.createElement("tr");
+        totalRow.innerHTML = `
+            <td colspan="5"><strong>Tổng đơn hàng:</strong></td>
+            <td>${totalCartPrice}</td>
+            <td><button>Mua</button></td>
+        `;
+        tbody.appendChild(totalRow);
     } else {
         console.log("Không tìm thấy dữ liệu hoặc cart trong dữ liệu.");
     }
