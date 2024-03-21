@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         totalRow.innerHTML = `
             <td colspan="5"><strong>Tổng đơn hàng:</strong></td>
             <td>${totalCartPrice}</td>
-            <td><button>Mua</button></td>
+            <td><button onclick="redirectToCheckout()">Mua</button></td>
         `;
         tbody.appendChild(totalRow);
     } else {
@@ -66,4 +66,9 @@ function removeItem(index) {
     formDataArray[0].cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
     localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
     location.reload(); // Tải lại trang để cập nhật giỏ hàng
+}
+
+// Hàm chuyển hướng đến trang thông tin mua hàng
+function redirectToCheckout() {
+    window.location.href = "order.html";
 }
