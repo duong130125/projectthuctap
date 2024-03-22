@@ -29,7 +29,7 @@ function updateCartDisplay() {
     let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
     let tbody = document.getElementById("tbody");
     let totalCartPrice = 0; // Khởi tạo biến tổng thành tiền
-    
+
     // Xóa tất cả các phần tử trong tbody để cập nhật mới
     tbody.innerHTML = "";
 
@@ -78,5 +78,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Hàm chuyển hướng đến trang thông tin mua hàng
 function redirectToCheckout() {
+    // Lấy thông tin giỏ hàng từ local storage
+    let user = JSON.parse(localStorage.getItem("formDataArray"));
+
+
+    // Tạo đối tượng chứa thông tin đơn hàng
+    let order = {
+        cart: user[0].cart, // Danh sách sản phẩm trong giỏ hàng
+        totalCartPrice: user[0].totalCartPrice // Tổng thành tiền
+    };
+   
+    // Lưu thông tin đơn hàng vào local storage
+    localStorage.setItem("order", JSON.stringify(order));
+
+    // Chuyển hướng đến trang thông tin mua hàng
     window.location.href = "order.html";
 }

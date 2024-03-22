@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 
-
+body{
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-financial-finance-cartoon-banner-poster-background-image_188700.jpg);
+}
 
 .container {
     max-width: 600px;
