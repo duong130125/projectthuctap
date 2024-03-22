@@ -1,4 +1,4 @@
-/* Reset CSS */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@
 .container {
     max-width: 600px;
     margin: auto;
-    background-color: aqua;
+    background-color: #ff7337;
     margin-top: 30px;
 }
 
@@ -24,13 +24,13 @@
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #343a40;
-    font-size: 28px;
+    color: #2c312c;
+    font-size: 35px;
 }
 
 label {
     font-weight: bold;
-    color: #495057;
+    color: #0d0d0e;
 }
 
 input[type="text"],
@@ -50,7 +50,7 @@ input[type="text"]:focus,
 input[type="tel"]:focus,
 select:focus {
     outline: none;
-    border-bottom-color: #007bff;
+    border-bottom-color: #d71111;
 }
 
 select {
@@ -69,7 +69,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #d80637;
+    background: #ff0000;
 }
 
 #cardFields {
