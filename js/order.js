@@ -9,6 +9,7 @@
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    calculateTotalPrice();
     // Khi form được gửi đi
     document.getElementById("checkoutForm").addEventListener("submit", function(event) {
         // Ngăn chặn hành động mặc định của form (chặn việc tải lại trang)
@@ -52,7 +53,22 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("expiryDate").value = "";
         document.getElementById("cvv").value = "";
 
+        // Xóa dữ liệu trong giỏ hàng
+        clearCartData();
+
         // Quay về trang chủ
         window.location.href = "index.html";
     });
 });
+
+
+// Hàm xóa dữ liệu cart trong formDataArray sau khi thanh toán
+function clearCartData() {
+    let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
+
+    // Gán giá trị của key "cart" thành một mảng rỗng
+    formDataArray[0].cart = [];
+
+    // Lưu formDataArray đã được cập nhật vào localStorage
+    localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
+}
