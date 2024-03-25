@@ -12,13 +12,12 @@ body {
 
 header {
     background-color:rgb(234, 47, 10);
-    color: #1ed411;
+    color: #0be645;
     height: 100px;
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    align-items: center; 
 }
 h1{
     display: flex;

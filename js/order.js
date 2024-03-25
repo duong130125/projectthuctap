@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let nameCard = document.getElementById("nameCard").value;
         let expiryDate = document.getElementById("expiryDate").value;
         let cvv = document.getElementById("cvv").value;
-        let promoCode = document.getElementById("promoCode").value;
 
         // Tạo một đối tượng chứa thông tin đơn hàng
         let orderData = {
@@ -34,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cardNumber: cardNumber,
             nameCard: nameCard,
             expiryDate: expiryDate,
-            cvv: cvv,
-            promoCode: promoCode
+            cvv: cvv
         };
 
         // Lưu đối tượng đơn hàng vào local storage
@@ -43,6 +41,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Hiển thị thông báo mua hàng thành công
         alert("Đơn hàng của bạn đã được xác nhận. Cảm ơn bạn đã mua hàng!");
+
+        // Xóa thông tin khỏi các ô input sau khi xác nhận đơn hàng
+        document.getElementById("fullName").value = "";
+        document.getElementById("phoneNumber").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("paymentMethod").value = "";
+        document.getElementById("cardNumber").value = "";
+        document.getElementById("nameCard").value = "";
+        document.getElementById("expiryDate").value = "";
+        document.getElementById("cvv").value = "";
+
+        // Quay về trang chủ
+        window.location.href = "index.html";
     });
 });
-

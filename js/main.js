@@ -107,8 +107,7 @@ function renderProducts(){
         `
             <div class="sanpham">
                 <div>
-                    <img class="img" src="${products[i].image}">
-                    <span class="detail"></span>
+                <a href="../pages/detail.html"><img class="img" src="${products[i].image}"></a>
                 </div>
                 <div class="thongtin">
                     <div><b>${products[i].name}</b></div>
@@ -134,18 +133,12 @@ function addToCart(productId) {
         return // gặp return dừng chương trình luôn
     }
     console.log("đi mua hàng bình thường");
-    /* 
-        lấy giỏ hàng của user để đi mua hàng
-        và lấy giỏ hàng user dựa vào id của user
-     */
+
     let users = JSON.parse(localStorage.getItem("formDataArray"));
     for (let i = 0; i < users.length; i++) {
         if (users[i].id == checkLogin) {
 
             //lấy thông tin sản phẩm để đưa vào giỏ hàng
-            // làm sao để lấy thông tin sản phẩm
-            // console.log("11111", productId);
-            // có id sản phẩm rồi làm sao lấy thông tin sản phẩm
             let product = JSON.parse(localStorage.getItem("products"));
             for (let j = 0; j < product.length; j++) {
                 if (productId == product[j].id) {

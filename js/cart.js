@@ -18,10 +18,13 @@ function decreaseQuantity(index) {
 
 // Hàm xóa sản phẩm khỏi giỏ hàng
 function removeItem(index) {
-    let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
-    formDataArray[0].cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
-    localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
-    updateCartDisplay(); // Cập nhật hiển thị giỏ hàng
+    let check = confirm("Bạn có muốn xóa hay không.");
+    if(check){
+        let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
+        formDataArray[0].cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
+        localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
+        updateCartDisplay(); // Cập nhật hiển thị giỏ hàng
+    }
 }
 
 // Hàm cập nhật hiển thị giỏ hàng và lưu thông tin vào localStorage
@@ -63,7 +66,7 @@ function updateCartDisplay() {
     totalRow.innerHTML = `
         <td colspan="5"><strong>Tổng đơn hàng:</strong></td>
         <td>${totalCartPrice}</td>
-        <td><button onclick="redirectToCheckout()">Mua</button></td>
+        <td><button onclick="redirectToCheckout()">Thanh Toán</button></td>
     `;
     tbody.appendChild(totalRow);
 
@@ -79,18 +82,38 @@ document.addEventListener("DOMContentLoaded", function() {
 // Hàm chuyển hướng đến trang thông tin mua hàng
 function redirectToCheckout() {
     // Lấy thông tin giỏ hàng từ local storage
-    let user = JSON.parse(localStorage.getItem("formDataArray"));
+    let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
 
+    // Kiểm tra nếu giỏ hàng trống
+    if (!formDataArray || formDataArray[0].cart.length === 0) {
+        alert("Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán.");
+        return; // Không chuyển hướng nếu giỏ hàng trống
+    } else {
+        // Tạo đối tượng chứa thông tin đơn hàng
+        let order = {
+            cart: formDataArray[0].cart, // Danh sách sản phẩm trong giỏ hàng
+            totalCartPrice: formDataArray[0].totalCartPrice // Tổng thành tiền
+        };
+       
+        // Lưu thông tin đơn hàng vào local storage
+        localStorage.setItem("order", JSON.stringify(order));
 
-    // Tạo đối tượng chứa thông tin đơn hàng
-    let order = {
-        cart: user[0].cart, // Danh sách sản phẩm trong giỏ hàng
-        totalCartPrice: user[0].totalCartPrice // Tổng thành tiền
-    };
-   
-    // Lưu thông tin đơn hàng vào local storage
-    localStorage.setItem("order", JSON.stringify(order));
+        // Xóa dữ liệu trong giỏ hàng
+        clearCartData();
 
-    // Chuyển hướng đến trang thông tin mua hàng
-    window.location.href = "order.html";
+        // Chuyển hướng đến trang thông tin mua hàng
+        window.location.href = "order.html";
+    }
 }
+
+// Hàm xóa dữ liệu cart trong formDataArray sau khi thanh toán
+function clearCartData() {
+    let formDataArray = JSON.parse(localStorage.getItem("formDataArray"));
+
+    // Gán giá trị của key "cart" thành một mảng rỗng
+    formDataArray[0].cart = [];
+
+    // Lưu formDataArray đã được cập nhật vào localStorage
+    localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
+}
+
