@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../style/admin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Quản Lý Admin</h1>
+    </div>
+    <div class="sidebar">
+        <ul> 
+            <img src="../asset/imgs/administration-team-concept-icon-organization-department-idea-thin-line-illustration-office-managers-team-company-staff-corporate-management-personnel-isolated-drawing-vector-removebg-preview.png" width="100px">
+            <div class="items">
+                <span style="font-size: 20px;" class="material-symbols-outlined">menu</span>
+                <li><a href="#">Danh Mục</a></li>
+            </div>
+            <li><a href="../pages/index.html">Trang chủ</a></li>
+            <li><a href="#" id="userLink">Người dùng</a></li>
+            <li><a href="#" id="productLink">Sản phẩm</a></li>
+        </ul>
+    </div>
+    <div class="content" id="userSection">
+        <h2>Quản lý Người dùng</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="userTabletbody">
+               
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content" id="productSection">
+        <h2>Quản lý Sản phẩm</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Giá</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="productTabletbody">
+               
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

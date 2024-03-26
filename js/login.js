@@ -15,12 +15,17 @@ signInButton.addEventListener('click', function(event) {
     let storedData = JSON.parse(localStorage.getItem('formDataArray'));
 
     // Kiểm tra xem dữ liệu từ local storage có tồn tại không
-    let check = storedData.find(check => check.email === email && check.password === password)
+    let user = storedData.find(user => user.email === email && user.password === password);
 
-    if (check) {
-        localStorage.setItem('userClass', check.id);
-        document.getElementById('successMessage').style.display = 'block';
-        window.location.href = "index.html";
+    if (user) {
+        if (user.locked) {
+            alert('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ với quản trị viên để biết thêm chi tiết.');
+            return; // Không cho phép đăng nhập nếu tài khoản bị khóa
+        } else {
+            localStorage.setItem('userClass', user.id);
+            document.getElementById('successMessage').style.display = 'block';
+            window.location.href = "index.html";
+        }
     } else {
         alert('Email hoặc password không chính xác.');
     }
