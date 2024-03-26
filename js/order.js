@@ -9,7 +9,6 @@
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    calculateTotalPrice();
     // Khi form được gửi đi
     document.getElementById("checkoutForm").addEventListener("submit", function(event) {
         // Ngăn chặn hành động mặc định của form (chặn việc tải lại trang)
