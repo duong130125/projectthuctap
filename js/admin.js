@@ -94,13 +94,15 @@ function editProduct(productId) {
     let product = productData.find(product => product.id === productId);
 
     if (product) {
-        let newProductName = prompt("Nhập tên mới cho sản phẩm:", product.name);
-        let newProductImage = prompt("Nhập link hình ảnh mới cho sản phẩm:", product.image);
-        let newProductPrice = prompt("Nhập giá mới cho sản phẩm:", product.price);
+        let newProductName = prompt("Cập nhật tên mới cho sản phẩm:", product.name);
+        let newProductImage = prompt("Cập nhật link hình ảnh mới cho sản phẩm:", product.image);
+        let newProductQuantity = prompt("Cập nhật số lượng sản phẩm:", product.quantity);
+        let newProductPrice = prompt("Cập nhật giá mới cho sản phẩm:", product.price);
 
-        if (newProductName && newProductImage && newProductPrice) {
+        if (newProductName && newProductImage && newProductPrice && newProductQuantity) {
             product.name = newProductName;
             product.image = newProductImage;
+            product.quantity = newProductQuantity;
             product.price = newProductPrice;
 
             // Cập nhật dữ liệu trong localStorage
@@ -141,6 +143,7 @@ function populateProductData() {
                 <td>${product.id}</td>
                 <td>${product.name}</td>
                 <td><img src="${product.image}" alt="${product.name}" style="width: 100px; height:60px; object-fit: cover;"></td>
+                <td>${product.quantity}</td>
                 <td>${product.price}</td>
                 <td>
                     <button onclick="editProduct(${product.id})">Sửa</button>
