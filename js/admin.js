@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Gọi hàm để đổ dữ liệu người dùng và sản phẩm
     populateUserData();
     populateProductData();
+    populateOrderData();
 
     // Lắng nghe sự kiện khi nhấp vào liên kết "Người dùng"
     document.getElementById('userLink').addEventListener('click', function(event) {
@@ -17,6 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Hiển thị trang quản lý sản phẩm
         showSection('productSection');
+    });
+
+    document.getElementById('orderLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+
+        // Hiển thị trang quản lý đơn hàng
+        showSection('orderSection');
     });
 });
 
@@ -152,6 +160,28 @@ function populateProductData() {
             </tr>
         `;
         productTableBody.innerHTML += row;
+    });
+}
+
+function populateOrderData() {
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let orderTableBody = document.getElementById('orderTableBody');
+    orderTableBody.innerHTML = ''; // Xóa dữ liệu cũ trước khi thêm mới
+
+    orders.forEach(order => {
+        let row = `
+            <tr>
+                <td>${order.id}</td>
+                <td>${order.userClass}</td>
+                <td>${order.totalCartPrice}</td>
+                <td>
+                    <button onclick="viewOrderDetails(${order.id})">Xem chi tiết</button>
+                    <button onclick="confirmOrder(${order.id})">Xác nhận</button>
+                    <button onclick="cancelOrder(${order.id})">Hủy</button>
+                </td>
+            </tr>
+        `;
+        orderTableBody.innerHTML += row;
     });
 }
 
