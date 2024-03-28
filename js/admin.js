@@ -185,6 +185,38 @@ function populateOrderData() {
     });
 }
 
+function viewOrderDetails(orderId) {
+    // Lấy đơn hàng từ localStorage bằng orderId
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let order = orders.find(order => order.id === orderId);
+    
+    if (order) {
+        // Lấy thông tin về người đặt hàng từ đối tượng order
+        let orderData = order.orderData || {};
+        
+        // Lấy thông tin về giỏ hàng từ đơn hàng
+        let cart = order.cart;
+        
+        // Hiển thị chi tiết đơn hàng và thông tin về người đặt hàng
+        let details = `Chi tiết đơn hàng ${order.id}:\n`;
+        details += `Tổng giá đơn hàng: ${order.totalCartPrice}\n`;
+        details += `Thông tin người đặt hàng:\n`;
+        details += `- Họ và tên: ${orderData.fullName}\n`;
+        details += `- Địa chỉ: ${orderData.address}\n`;
+        details += `- Số điện thoại: ${orderData.phoneNumber}\n`;
+        details += `- Phương thức thanh toán: ${orderData.paymentMethod}\n`;
+        details += "Chi tiết giỏ hàng:\n";
+        
+        cart.forEach(item => {
+            details += `- ${item.name}: ${item.quantily} x ${item.price}\n`;
+        });
+        
+        alert(details);
+    } else {
+        alert("Không tìm thấy đơn hàng!");
+    }
+}
+
 
 function showSection(sectionId) {
     // Ẩn tất cả các phần nội dung
