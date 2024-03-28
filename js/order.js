@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("orders", JSON.stringify(orders));
 
             // Hiển thị thông báo mua hàng thành công
-            alert("Đơn hàng của bạn đã được xác nhận. Cảm ơn bạn đã mua hàng!");
+            alert("Đơn hàng của bạn đã được đặt thành công. Cảm ơn bạn đã mua hàng!");
 
             // Xóa thông tin khỏi các ô input sau khi xác nhận đơn hàng
             document.getElementById("fullName").value = "";

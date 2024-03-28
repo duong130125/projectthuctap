@@ -177,12 +177,25 @@ function populateOrderData() {
                 <td>
                     <button onclick="viewOrderDetails(${order.id})">Xem chi tiết</button>
                     <button onclick="confirmOrder(${order.id})">Xác nhận</button>
-                    <button onclick="cancelOrder(${order.id})">Hủy</button>
                 </td>
             </tr>
         `;
         orderTableBody.innerHTML += row;
     });
+}
+
+function confirmOrder(orderId) {
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let orderIndex = orders.findIndex(order => order.id === orderId);
+
+    if (orderIndex !== -1) {
+        // Cập nhật trạng thái của đơn hàng thành đã xác nhận
+        orders[orderIndex].status = 'confirmed';
+        localStorage.setItem("orders", JSON.stringify(orders));
+        alert("Xác nhận đơn hàng.");
+    } else {
+        alert("Không tìm thấy đơn hàng để xác nhận.");
+    }
 }
 
 function viewOrderDetails(orderId) {
