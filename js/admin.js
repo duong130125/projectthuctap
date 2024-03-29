@@ -163,6 +163,50 @@ function populateProductData() {
     });
 }
 
+function addProduct() {
+    let productName = prompt("Nhập tên sản phẩm:");
+    let productImage = prompt("Nhập đường dẫn hình ảnh:");
+    let productQuantity = prompt("Nhập số lượng:");
+    let productPrice = prompt("Nhập giá:");
+
+    // Tạo đối tượng sản phẩm mới
+    let newProduct = {
+        id: generateProductId(), // Hàm generateProductId() phải được định nghĩa trước đó
+        name: productName,
+        image: productImage,
+        quantity: parseInt(productQuantity),
+        price: parseFloat(productPrice)
+    };
+
+    // Lấy dữ liệu sản phẩm từ localStorage
+    let productData = JSON.parse(localStorage.getItem("products")) || [];
+
+    // Thêm sản phẩm mới vào mảng
+    productData.push(newProduct);
+
+    // Lưu lại dữ liệu sản phẩm mới vào localStorage
+    localStorage.setItem("products", JSON.stringify(productData));
+
+    // Cập nhật giao diện
+    populateProductData();
+}
+
+// Hàm tạo ID cho sản phẩm mới
+function generateProductId() {
+    let productData = JSON.parse(localStorage.getItem("products")) || [];
+    let maxId = 0;
+
+    // Tìm ID lớn nhất
+    productData.forEach(product => {
+        if (product.id > maxId) {
+            maxId = product.id;
+        }
+    });
+
+    // Tạo ID mới
+    return maxId + 1;
+}
+
 function populateOrderData() {
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     let orderTableBody = document.getElementById('orderTableBody');
