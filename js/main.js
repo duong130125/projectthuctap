@@ -51,10 +51,12 @@ function addToCart(productId) {
                     if (index == -1) {
                         users[i].cart.push({ ...product[j], quantily: 1 });
                         localStorage.setItem("formDataArray", JSON.stringify(users));
+                        alert("Sản phẩm mới được thêm vào giỏ hàng.");
                         showQuantilyCart();
                     } else {
                         users[i].cart[index].quantily = ++users[i].cart[index].quantily;
                         localStorage.setItem("formDataArray", JSON.stringify(users));
+                        alert("Sản phẩm được thêm vào giỏ hàng.");
                     }
                 }
             }
