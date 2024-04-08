@@ -234,7 +234,7 @@ function confirmOrder(orderId) {
 
     if (orderIndex !== -1) {
         // Cập nhật trạng thái của đơn hàng thành đã xác nhận
-        orders[orderIndex].status = 'confirmed';
+        orders[orderIndex].status = 'Đơn hàng đã xác nhận';
         localStorage.setItem("orders", JSON.stringify(orders));
         alert("Xác nhận đơn hàng.");
     } else {
@@ -257,6 +257,7 @@ function viewOrderDetails(orderId) {
         // Hiển thị chi tiết đơn hàng và thông tin về người đặt hàng
         let details = `Chi tiết đơn hàng ${order.id}:\n`;
         details += `Tổng giá đơn hàng: ${order.totalCartPrice}\n`;
+        details += `Trạng thái đơn hàng: ${order.status}\n`;
         details += `Thông tin người đặt hàng:\n`;
         details += `- Họ và tên: ${orderData.fullName}\n`;
         details += `- Địa chỉ: ${orderData.address}\n`;

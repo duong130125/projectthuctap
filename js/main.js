@@ -1,3 +1,63 @@
+let productss = [
+    {
+        id:1,
+        image:"../asset/imgs/ảnh1.jpg",
+        name: "sản phẩm 1",
+        price: 3000,
+        quantity: 1000
+    },
+    {
+        id:2,
+        image:"../asset/imgs/ảnh2.jpg",
+        name: "sản phẩm 2",
+        price: 2500,
+        quantity: 1000
+    },
+    {
+        id:3,
+        image:"../asset/imgs/ảnh3.jpg",
+        name: "sản phẩm 3",
+        price: 5000,
+        quantity: 1000
+    },
+    {
+        id:4,
+        image:"../asset/imgs/ảnh4.jpg",
+        name: "sản phẩm 4",
+        price: 700,
+        quantity: 1000
+    },
+    {
+        id:5,
+        image:"../asset/imgs/ảnh5.jpg",
+        name: "sản phẩm 5",
+        price: 500,
+        quantity: 1000
+    },
+    {
+        id:6,
+        image:"../asset/imgs/ảnh6.jpg",
+        name: "sản phẩm 6",
+        price: 1500,
+        quantity: 1000
+    },
+    {
+        id:7,
+        image:"../asset/imgs/ảnh7.jpg",
+        name: "sản phẩm 7",
+        price: 2000,
+        quantity: 1000
+    },
+    {
+        id:8,
+        image:"../asset/imgs/ảnh8.jpg",
+        name: "sản phẩm 8",
+        price: 1000,
+        quantity: 1000
+    },
+]
+localStorage.setItem("products", JSON.stringify(productss));
+
 let products = JSON.parse(localStorage.getItem("products"));
 
 function renderProducts() {

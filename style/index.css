@@ -11,8 +11,7 @@ body {
 }
 
 header {
-    background-color:rgb(234, 47, 10);
-    color: #0be645;
+    background-color:rgb(137, 75, 115);
     height: 100px;
     padding: 20px;
     display: flex;
@@ -24,12 +23,12 @@ h1{
     align-items: center;
     justify-content: center;
     color: #d0011b;
-    background-color: #ee4d2da9;
+    background-color: #854f8297;
 }
 
 img{
-    width: 250px;
-    height: 150px;
+    width: 200px;
+    height: 120px;
 }
 
 .hqfdyu {

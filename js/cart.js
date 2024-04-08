@@ -139,9 +139,10 @@ function createOrder(userFormData) {
 
     let order = {
         id: orders.length + 1, // ID sẽ là chỉ số của mảng đơn hàng + 1
+        status: "chưa xác nhận",
         userClass: userFormData.id,
         cart: userFormData.cart,
-        totalCartPrice: userFormData.totalCartPrice
+        totalCartPrice: userFormData.totalCartPrice,
     };
 
     orders.push(order);
